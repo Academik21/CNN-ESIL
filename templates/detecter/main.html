@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PackedTotal</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static "favicon.png" %}" type=image/x-icon> 
+    <link rel="stylesheet" href="{% static "mystyles.css" %}"> 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static "jquery.min.js" %}"></script>
+</head>
+<body>
+    <div name ="bare-account" style="height: 51px">
+
+        <div style="position: fixed; height:50px; left: 25px; z-index: 1; line-height: 1.5;"> 
+            <a style="margin-right: 25px;" href="http://127.0.0.1:8000/detecter/main/" class="feature">Главная<a>
+            <a class="feature" href = "http://127.0.0.1:8000/detecter/history">History<a>
+        </div>
+
+        <div style="position: fixed; height:50px; right: 0; z-index: 1; margin-right: 25px;"> 
+            <a style="margin-right: 25px;">Войти<a>
+            <a class="feature" href = "http://127.0.0.1:8000/detecter/registr">Регистрация<a>
+        </div>
+
+    </div>
+
+    <center>
+        <div style="margin: 50px">
+            <img src="{% static 'vt_logo.svg' %}" style="vertical-align: middle;">
+            <span style="color:#3366CC; vertical-align: middle; font-size: 300%; font-weight: bold;">PACKEDTOTAL</span>
+        </div>
+        <p style="margin: 40px auto 50px; text-align: center; max-width: 810px; line-height: 1.6em">Система автоматического обнаружения упакованных приложений. Проверьте свои файлы, любой упакованный файл является потенциальной угрозой<p>
+        
+        <img alt src="{% static 'thumbprint.png' %}" width="224" height="160">
+        <p style="margin: 40px auto 50px; text-align: center; max-width: 610px; line-height: 1.6em">Ваш файл будет отправлен на сервер. PackedTotal не несет ответственности за содержание вашего сообщения<p>
+
+         {% comment %} <form method="post" enctype="multipart/form-data">
+            <span id=button1 type="submit" name="myfile">Выбрать файл</span>
+        </form> 
+
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <label for="f">QWERR</label>
+            <input id="f" type="file" name="myfile">
+            <button type="submit">Upload</button>
+        </form> {% endcomment %}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="box-form">
+                <div>
+                    <label id="input_label" for="myfile" class="chous">Выберите файл</label>
+                </div>
+            
+                <div>
+                    <input type="file" class="my" id="myfile" name="myfile" multiple="multiple">
+                </div>
+            </div>
+
+            <div class="box-form2">
+                <div>
+                    <label id="input_label2" for="button" class="chous">Отправить</label>
+                </div>
+            
+                <div>
+                    <input type="submit" class="my" id="button" name="button">
+                </div>
+            </div>
+            
+        </form>
+
+        
+
+        {% if uploaded_file_url %}
+            <center>
+                <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+
+                <h2>{{ status }}</h2>
+            </center>
+
+        {% endif %}
+
+    </center>
+
+   
+    <script>
+        $('.my').change(function() {
+            if ($(this).val() != '') {
+                $('#input_label').text($(this)[0].files[0].name);
+            }
+
+            else {
+                $('#input_label').text('Выберите файлы'); 
+            }
+        });
+    </script>
+    
+    <!--$('#input_label').text('Выбрано файлов: ' + $(this)[0].files[0].name);-->
+</body>
+
+</html>

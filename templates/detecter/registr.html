@@ -1,0 +1,12 @@
+{% comment %} {% extends 'detecter/main.html' %} {% endcomment %}
+ 
+{% comment %} {% block title %}Регистрация{% endblock %} {% endcomment %}
+ 
+{% block content %}
+    <h2>Регистрация</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}

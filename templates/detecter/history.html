@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PackedTotal</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static "favicon.png" %}" type=image/x-icon> 
+    <link rel="stylesheet" href="{% static "mystyles.css" %}"> 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static "jquery.min.js" %}"></script>
+</head>
+<body>
+    <div name ="bare-account" style="height: 51px">
+
+        <div style="position: fixed; height:50px; left: 25px; z-index: 1; line-height: 1.5;"> 
+            <a style="margin-right: 25px;" href="http://127.0.0.1:8000/detecter/main/" class="feature">Главная<a>
+            <a class="feature" href = "http://127.0.0.1:8000/detecter/history">History<a>
+        </div>
+
+        <div style="position: fixed; height:50px; right: 0; z-index: 1; margin-right: 25px;"> 
+            <a style="margin-right: 25px;">Войти<a>
+            <a>Регистрация<a>
+        </div>
+
+    </div>
+
+
+    {% while %}
+
+    
+</body>
+</html>
