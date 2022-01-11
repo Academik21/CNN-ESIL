@@ -1,0 +1,72 @@
+
+#button1{ 
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 20px;
+    width: 200px;
+    border-radius:  8px;
+    color: blue;
+    line-height:  10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border: var(--vt-ui-button-border, 1px solid blue);
+}
+
+.chous {
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 25px;
+    cursor: pointer;
+    display: block;
+    font: 14px/50px Tahoma;
+    transition: all 0.18s ease-in-out;
+    border: 1px solid #0000ff;
+    background: linear-gradient(to top right, #2d999c, #2b3c9b 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0)) top right/500% 500%;
+    color: #0b668a;
+}
+
+.chous:hover {
+    color: white;
+    background-position: bottom left;
+}
+    
+.my {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.label {
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font: 14px/50px Tahoma;
+    transition: all 0.18s ease-in-out;
+    border: 1px solid #333;
+    color: #333;
+}
+
+.label:hover {
+    color: white;
+    background: #333;
+}
+
+.feature {
+    display: inline-block;
+    color: var(--vt-grey-600);
+    margin-right: 25px;
+    font-size: 14px;
+    text-decoration: none;
+}
